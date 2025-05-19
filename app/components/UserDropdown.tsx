@@ -39,11 +39,6 @@ export function UserDropdown({ userImage }: iAppProps) {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link className="w-full" href="/create">
-            Create Post
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <Link className="w-full" href="/settings">
             Settings
           </Link>

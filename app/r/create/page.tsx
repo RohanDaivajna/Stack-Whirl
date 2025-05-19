@@ -30,14 +30,14 @@ export default function SubredditPage() {
     }
   }, [state, toast]);
   return (
-    <div className="max-w-[1000px] mx-auto  flex flex-col mt-4">
+    <div className="max-w-[1000px] mx-auto flex flex-col mt-4 px-2 sm:px-4">
       <form action={formAction}>
-        <h1 className="text-3xl font-extrabold tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
           Create Subreddit
         </h1>
         <Separator className="my-4" />
-        <Label className="text-lg">Name</Label>
-        <p className="text-muted-foreground">
+        <Label className="text-base sm:text-lg">Name</Label>
+        <p className="text-sm sm:text-base text-muted-foreground">
           Subreddit names including capitalization cannot be changed!
         </p>
 
@@ -55,7 +55,7 @@ export default function SubredditPage() {
         </div>
         <p className="mt-1 text-destructive">{state.message}</p>
 
-        <div className="w-full flex mt-5 gap-x-5 justify-end">
+        <div className="w-full flex flex-col sm:flex-row mt-5 gap-3 sm:gap-x-5 justify-end">
           <Button variant="secondary" asChild>
             <Link href="/">Cancel</Link>
           </Button>

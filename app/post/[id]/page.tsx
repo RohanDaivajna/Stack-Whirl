@@ -73,8 +73,8 @@ export default async function PostPage({ params }: { params: { id: string } }) {
   const data = await getData(params.id);
 
   return (
-    <div className="max-w-[1200px] mx-auto flex gap-x-10 mt-4 mb-10">
-      <div className="w-[70%] flex flex-col gap-y-5">
+     <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-y-8 lg:gap-x-10 mt-4 mb-10 px-2 sm:px-4">
+      <div className="w-full lg:w-[70%] flex flex-col gap-y-5">
         <Card className="p-2 flex">
           <div className="flex flex-col  items-center  gap-y-2  p-2">
             <form action={handleVote}>
@@ -158,7 +158,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
         </Card>
       </div>
 
-      <div className="w-[30%]">
+      <div className="w-full lg:w-[30%] mt-6 lg:mt-0">
         <Card>
           <div className="bg-muted p-4 font-semibold">About Subreddit</div>
           <div className="p-4">

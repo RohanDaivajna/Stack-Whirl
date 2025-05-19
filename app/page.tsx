@@ -61,12 +61,8 @@ export default function Home({
 }) {
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col lg:flex-row gap-y-8 lg:gap-x-10 mt-4 mb-10 px-2 sm:px-4">
-      <div className="w-full lg:w-[65%] flex flex-col gap-y-5">
-        <CreatePostCard />
-        <Suspense fallback={<SuspenseCard />} key={searchParams.page}>
-          <ShowItems searchParams={searchParams} />
-        </Suspense>
-      </div>
+      
+      
       <div className="w-full lg:w-[35%] mt-6 lg:mt-0">
         <Card>
           <Image src={Banner} alt="Banner" className="w-full h-auto object-cover" />
@@ -96,6 +92,14 @@ export default function Home({
           </div>
         </Card>
       </div>
+      
+      <div className="w-full lg:w-[65%] flex flex-col gap-y-5">
+        <CreatePostCard />
+        <Suspense fallback={<SuspenseCard />} key={searchParams.page}>
+          <ShowItems searchParams={searchParams} />
+        </Suspense>
+      </div>
+      
     </div>
   );
 }

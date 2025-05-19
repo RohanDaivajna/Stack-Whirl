@@ -50,9 +50,32 @@ export default function CreatePostRoute({
 
   const createPostReddit = createPost.bind(null, { jsonContent: json });
   return (
-    <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4">
-      <div className="w-[65%] flex flex-col gap-y-5">
-        <h1 className="font-semibold">
+    <div className="max-w-[1000px] mx-auto flex flex-col-reverse lg:flex-row gap-y-8 lg:gap-x-10 mt-4 mb-10 px-2 sm:px-4">
+      
+      
+        <div className="w-full lg:w-[35%] mt-6 lg:mt-0">
+        <Card className="flex flex-col p-4">
+          <div className="flex items-center gap-x-2">
+            <Image className="h-10 w-10" src={pfp} alt="pfp" />
+            <h1 className="font-medium">Posting to StackWhirl</h1>
+          </div>
+          <Separator className="mt-2" />
+
+          <div className="flex flex-col gap-y-5 mt-5">
+            {rules.map((item) => (
+              <div key={item.id}>
+                <p className="text-sm font-medium">
+                  {item.id}. {item.text}
+                </p>
+                <Separator className="mt-2" />
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+      
+      <div className="w-full lg:w-[65%] flex flex-col gap-y-5">
+         <h1 className="font-semibold">
           Subreddit:{" "}
           <Link href={`/r/${params.id}`} className="text-primary">
             r/{params.id}
@@ -123,26 +146,7 @@ export default function CreatePostRoute({
           </TabsContent>
         </Tabs>
       </div>
-      <div className="w-[35%]">
-        <Card className="flex flex-col p-4">
-          <div className="flex items-center gap-x-2">
-            <Image className="h-10 w-10" src={pfp} alt="pfp" />
-            <h1 className="font-medium">Posting to StackWhirl</h1>
-          </div>
-          <Separator className="mt-2" />
-
-          <div className="flex flex-col gap-y-5 mt-5">
-            {rules.map((item) => (
-              <div key={item.id}>
-                <p className="text-sm font-medium">
-                  {item.id}. {item.text}
-                </p>
-                <Separator className="mt-2" />
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
+    
     </div>
   );
 }

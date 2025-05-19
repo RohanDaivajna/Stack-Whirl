@@ -76,8 +76,8 @@ export default async function SubRedditRoute({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4 mb-10">
-      <div className="w-[65%] flex flex-col gap-y-5">
+    <div className="max-w-[1000px] mx-auto flex flex-col-reverse lg:flex-row gap-y-8 lg:gap-x-10 mt-4 mb-10 px-2 sm:px-4">
+      <div className="w-full lg:w-[65%] flex flex-col gap-y-5">
         <CreatePostCard />
 
         {data?.posts.length === 0 ? (
@@ -116,7 +116,7 @@ export default async function SubRedditRoute({
         )}
       </div>
 
-      <div className="w-[35%]">
+      <div className="w-full lg:w-[35%] mt-6 lg:mt-0">
         <Card>
           <div className="bg-muted p-4 font-semibold">About Subreddit</div>
           <div className="p-4">

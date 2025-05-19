@@ -60,24 +60,24 @@ export default function Home({
   searchParams: { page: string };
 }) {
   return (
-    <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4 mb-10">
-      <div className="w-[65%] flex flex-col gap-y-5">
+    <div className="max-w-[1000px] mx-auto flex flex-col lg:flex-row gap-y-8 lg:gap-x-10 mt-4 mb-10 px-2 sm:px-4">
+      <div className="w-full lg:w-[65%] flex flex-col gap-y-5">
         <CreatePostCard />
         <Suspense fallback={<SuspenseCard />} key={searchParams.page}>
           <ShowItems searchParams={searchParams} />
         </Suspense>
       </div>
-      <div className="w-[35%]">
+      <div className="w-full lg:w-[35%] mt-6 lg:mt-0">
         <Card>
-          <Image src={Banner} alt="Banner"/>
+          <Image src={Banner} alt="Banner" className="w-full h-auto object-cover" />
           <div className="p-2">
             <div className="flex items-center">
               <Image
                 src={HelloImage}
                 alt="Hello Image"
-                className="w-20 h-16 -mt-6"
+                className="w-16 h-12 sm:w-20 sm:h-16 -mt-6"
               />
-              <h1 className="font-large pl-3">Home</h1>
+              <h1 className="font-large pl-3 text-lg sm:text-xl">Home</h1>
             </div>
             <p className="text-sm text-muted-foreground pt-2">
               Your Home StackWhirl frontpage. Come here to check in with your
